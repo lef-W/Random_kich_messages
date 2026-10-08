@@ -126,7 +126,7 @@
     <!-- Message tiré au sort -->
     <div id="textWrapper" class="w-full px-4 py-2">
       <h1 id="messageStage" class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight drop-shadow-[0_4px_12px_rgba(219,39,119,0.9)]">
-        bisous marie
+        bisous Eéonore
       </h1>
     </div>
   </main>
@@ -535,14 +535,14 @@
       const now = new Date().toISOString();
       let visitHistory = [];
       try {
-        visitHistory = JSON.parse(localStorage.getItem('marie_visites') || '[]');
+        visitHistory = JSON.parse(localStorage.getItem('Eéonore_visites') || '[]');
       } catch(e) {}
       visitHistory.push(now);
-      localStorage.setItem('marie_visites', JSON.stringify(visitHistory));
+      localStorage.setItem('Eéonore_visites', JSON.stringify(visitHistory));
 
       // 2. Compteur en ligne public instantané (sans clé secrète nécessaire)
       // Ce webhook met à jour un compteur incrémental sécurisé pour votre site
-      const siteNamespace = "pour-marie-" + window.location.hostname.replace(/[^a-zA-Z0-9]/g, '_');
+      const siteNamespace = "pour-Eéonore-" + window.location.hostname.replace(/[^a-zA-Z0-9]/g, '_');
       fetch(`https://api.counterapi.dev/v1/${siteNamespace}/visits/up`).catch(() => {});
     }
 
