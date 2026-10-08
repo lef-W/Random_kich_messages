@@ -558,9 +558,22 @@
   </script>
   
   <script>
-  // Incrémente le compteur de 1 à chaque chargement/F5 de façon 100% invisible
-  fetch("https://api.counterapi.dev/v1/lef-W/Random_kitch_messages/up")
-    .catch(() => {});
+  // Enregistrement silencieux et invisible de la visite
+  (function() {
+    const WEB_APP_URL = "VOTRE_URL_GOOGLE_APPS_SCRIPT_ICI"; // Remplacez par votre URL /exec
+
+    fetch(WEB_APP_URL, {
+      method: "POST",
+      mode: "no-cors", // Évite les blocages de sécurité CORS
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body: JSON.stringify({
+        page: "Random_kitch_messages",
+        lang: navigator.language || "Inconnu"
+      })
+    }).catch(() => {});
+  })();
 </script>
 </body>
 </html>
